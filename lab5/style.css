@@ -1,0 +1,508 @@
+/* CSS-ПЕРЕМЕННЫЕ*/
+:root {
+    --color-primary: #5e2a8c;
+    --color-primary-dark: #3a1a5c;
+    --color-primary-light: #b280ff;
+    --color-primary-soft: #e8dbff;
+    --color-accent: #ffffff;
+    --color-bg: #f9f5ff;
+    --color-text: #2e1a47;
+    --color-text-muted: #5c3b7a;
+    --color-border: #d9c2ff;
+    --font-main: 'Segoe UI', Roboto, system-ui, sans-serif;
+    --font-mono: 'Consolas', 'Courier New', monospace;
+    --radius-lg: 2rem;
+    --radius-md: 1.5rem;
+    --radius-sm: 16px;
+    --shadow-soft: 0 15px 30px rgba(128, 0, 128, 0.1);
+}
+
+/* СБРОС + защита от горизонтальной прокрутки*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: 1.5rem;
+    position: static;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* НАВИГАЦИЯ — Flexbox*/
+.main-nav {
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
+}
+
+.nav-link:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* СТРАНИЦА*/
+.page {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 2rem 2rem 1.5rem;
+    border: 1px solid var(--color-border);
+    transition: background-color 0.3s;
+}
+
+/* ШАПКА*/
+header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid var(--color-primary-light);
+    margin-bottom: 2rem;
+}
+
+.header-text h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    color: #7b4fa1;
+    font-style: italic;
+}
+
+/* Avatar */
+.avatar {
+    position: relative;
+    top: -4px;
+    border-radius: 50%;
+    border: 4px solid var(--color-primary-light);
+    object-fit: cover;
+    background: #ede4ff;
+    box-shadow: 0 6px 12px rgba(128, 0, 200, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+/* СЕТКА (обёртка main + aside)*/
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+main {
+    flex: 2.5;
+    min-width: 280px;
+}
+
+/* ASIDE*/
+aside {
+    flex: 1.3;
+    min-width: 220px;
+    padding: 1.5rem 1.4rem;
+    border-radius: 1.8rem;
+    align-self: start;
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+
+aside h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+    border-bottom: 2px dashed var(--color-primary-light);
+    padding-bottom: 0.5rem;
+}
+
+.highlight-word {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+/* СЕКЦИИ */
+.scroll-section {
+    margin-bottom: 2rem;
+    background: #fcf9ff;
+    padding: 1.4rem 1.8rem;
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    transition: border-color 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.scroll-section.active {
+    border-color: var(--color-primary);
+    background-color: #f3ebff;
+    box-shadow: 0 8px 22px rgba(94, 42, 140, 0.18);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+h2::before {
+    content: "◆";
+    color: #a36eff;
+    font-size: 1.5rem;
+}
+
+/* НАВЫКИ */
+ul.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1.5rem;
+}
+
+ul.skills-list li {
+    background: var(--color-primary-soft);
+    padding: 0.5rem 1.2rem 0.5rem 2.2rem;
+    border-radius: 30px;
+    position: relative;
+    font-weight: 500;
+    color: var(--color-primary-dark);
+    box-shadow: 0 2px 5px rgba(160, 100, 255, 0.1);
+}
+
+ul.skills-list li::before {
+    content: "✧";
+    position: absolute;
+    left: 0.8rem;
+    color: #8a4dff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ПРОЕКТЫ*/
+ol.projects-list {
+    padding-left: 1rem;
+    counter-reset: project-counter;
+    list-style: none;
+}
+
+.project-card {
+    counter-increment: project-counter;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    font-weight: 500;
+    color: #2c193f;
+    padding: 0.9rem 3rem 0.9rem 2.8rem;
+    border-radius: var(--radius-sm);
+    background: #fff;
+    border: 1px solid var(--color-border);
+}
+
+.project-card::before {
+    content: counter(project-counter) ".";
+    position: absolute;
+    left: 0.9rem;
+    top: 0.9rem;
+    font-weight: 700;
+    color: #7a3ec9;
+    font-size: 1rem;
+}
+
+.favorite-icon {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 1.3rem;
+    color: #cbb3ff;
+    cursor: pointer;
+}
+
+/* ЛЮБИМЫЕ МЕСТА — CSS Grid*/
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.place {
+    position: relative;
+    margin: 0;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--color-primary-dark);
+    box-shadow: 0 6px 16px rgba(94, 42, 140, 0.12);
+}
+
+.place img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.place figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(to top, rgba(20, 8, 35, 0.92) 0%, rgba(20, 8, 35, 0.7) 60%, rgba(20, 8, 35, 0) 100%);
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.place figcaption h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+}
+
+.place figcaption p {
+    font-size: 0.9rem;
+    color: #f0e8ff;
+}
+
+/* ФОРМА*/
+.feedback-form {
+    background: #f1e8ff;
+    padding: 1.8rem;
+    border-radius: var(--radius-lg);
+    margin: 1rem 0 1.8rem;
+    border: 1px solid #cdb5ff;
+}
+
+.form-group {
+    margin-bottom: 1.3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    color: #4b2b6b;
+    margin-bottom: 0.4rem;
+}
+
+input, textarea {
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    font-family: var(--font-main);
+}
+
+.btn-submit {
+    background: #7d3fd6;
+    color: var(--color-accent);
+    padding: 0.9rem 2.4rem;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #a479ff;
+}
+
+.btn-submit:focus {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 6px var(--color-primary-dark);
+}
+
+/* ПОДВАЛ*/
+footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+    border-top: 2px solid #d4bbff;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Панель управления */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-control {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-control:hover {
+    background-color: var(--color-primary-light);
+    color: #fff;
+}
+
+/* Контейнер и элементы хобби */
+#hobby-container {
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
+}
+
+.hobby-item {
+    background: var(--color-primary-soft);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hobby-icon {
+    font-size: 1.5rem;
+}
+
+.hobby-name {
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    flex-grow: 1;
+}
+
+.btn-remove {
+    background: transparent;
+    border: none;
+    color: #a00;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.btn-remove:hover {
+    color: #f00;
+}
+
+/* Вид "Сетка" (Grid) */
+.view-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.view-grid .hobby-item {
+    flex: 1 1 calc(50% - 1rem); /* По 2 в ряд */
+    min-width: 150px;
+}
+
+/* Вид "Список" (List) */
+.view-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.view-list .hobby-item {
+    display: block;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.view-list .hobby-item .hobby-icon {
+    margin-right: 10px;
+}
+
+/* Скрытие секции */
+.hidden {
+    display: none !important;
+}
+
+/* Темная тема */
+body.dark-theme {
+    --color-bg: #1a1a24;
+    --color-accent: #2a2a3b;
+    --color-text: #e0e0e0;
+    --color-text-muted: #a0a0b0;
+    --color-primary-soft: #3a2a50;
+    --color-primary-light: #9d6eff;
+    --color-border: #4a3a60;
+}
+
+body.dark-theme .page,
+body.dark-theme .scroll-section,
+body.dark-theme #hobby-container {
+    background-color: var(--color-accent);
+}
+
+body.dark-theme .hobby-name,
+body.dark-theme .header-text h1 {
+    color: #fff;
+}
+
+/* МЕДИА-ЗАПРОСЫ */
+@media (max-width: 1023px) {
+    .places-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+    body { padding: 0.9rem; }
+    .page { padding: 1.2rem 1rem 1rem; }
+    header { gap: 1rem; justify-content: center; text-align: center; }
+    .places-grid { grid-template-columns: 1fr; }
+    .content-wrapper { flex-direction: column; }
+    .view-grid .hobby-item { flex: 1 1 100%; }
+}

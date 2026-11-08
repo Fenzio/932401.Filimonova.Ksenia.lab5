@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О себе — Филимонова Ксения</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Внутренний блок: стили только для textarea */
+        textarea {
+            min-height: 220px;
+            font-family: var(--font-mono, 'Consolas', monospace);
+            box-shadow: inset 0 3px 8px rgba(94, 42, 140, 0.18);
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Flex-навигация -->
+    <nav class="main-nav" aria-label="Основная навигация">
+        <ul class="nav-list">
+            <li><a href="#skills"   class="nav-link">Навыки</a></li>
+            <li><a href="#projects" class="nav-link">Проекты</a></li>
+            <li><a href="#hobbies-section"  class="nav-link">Хобби</a></li>
+            <li><a href="#places"   class="nav-link">Места</a></li>
+            <li><a href="#feedback" class="nav-link">Связь</a></li>
+        </ul>
+    </nav>
+
+    <div class="page">
+        <header>
+            <img src="https://i.pinimg.com/originals/37/66/dc/3766dcf4ce502d269ee580a7ea2423c2.png?nii=t"
+                 alt="Аватар Ксении Филимоновой"
+                 width="150" height="150" class="avatar">
+            <div class="header-text">
+                <h1>Филимонова Ксения</h1>
+                <p>искусство и креатив</p>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <main>
+
+                <section id="skills" class="scroll-section">
+                    <h2>Навыки</h2>
+                    <ul class="skills-list">
+                        <li>Композиция</li>
+                        <li>Скетчинг</li>
+                        <li>Колористика</li>
+                        <li>Коллаж и микс-медиа</li>
+                        <li>Каллиграфия</li>
+                    </ul>
+                </section>
+
+                <section id="projects" class="scroll-section">
+                    <h2>Проекты</h2>
+                    <ol class="projects-list">
+                        <li class="project-card">
+                            <span class="project-text" lang="ru">Коллекция «Проклятье домашних Гран-при» — зарисовки моментов, разбивающих сердца</span>
+                            <span class="favorite-icon" aria-hidden="true" title="Избранное">★</span>
+                        </li>
+                        <li class="project-card">
+                            <span class="project-text" lang="ru">Персональный проект «Хрупкое равновесие» — серия работ, показывающая шаткую ходьбу по лезвию ножа</span>
+                            <span class="favorite-icon" aria-hidden="true" title="Избранное">★</span>
+                        </li>
+                        <li class="project-card">
+                            <span class="project-text" lang="ru">Дизайн «Спасибо, Зандворт» — проект в стилистике делфтского фарфора</span>
+                            <span class="favorite-icon" aria-hidden="true" title="Избранное">★</span>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- Секция Хобби -->
+                <section id="hobbies-section" class="scroll-section">
+                    <h2>Хобби</h2>
+                    
+                    <!-- Панель управления -->
+                    <div class="controls">
+                        <button id="btn-theme" class="btn-control">Сменить тему</button>
+                        <button id="btn-view" class="btn-control">Переключить вид</button>
+                        <button id="btn-add" class="btn-control">Добавить хобби</button>
+                        <button id="btn-hide" class="btn-control">Скрыть хобби</button>
+                    </div>
+
+                    <!-- Контейнер для хобби -->
+                    <div id="hobby-container" class="view-grid">
+                        <div class="hobby-item">
+                            <span class="hobby-icon">🎨</span>
+                            <span class="hobby-name">Рисование</span>
+                            <button class="btn-remove" title="Удалить">✖</button>
+                        </div>
+                        <div class="hobby-item">
+                            <span class="hobby-icon">📚</span>
+                            <span class="hobby-name">Чтение</span>
+                            <button class="btn-remove" title="Удалить">✖</button>
+                        </div>
+                        <div class="hobby-item">
+                            <span class="hobby-icon">📸</span>
+                            <span class="hobby-name">Фотография</span>
+                            <button class="btn-remove" title="Удалить">✖</button>
+                        </div>
+                        <div class="hobby-item">
+                            <span class="hobby-icon">🖋️</span>
+                            <span class="hobby-name">Каллиграфия</span>
+                            <button class="btn-remove" title="Удалить">✖</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="places" class="scroll-section">
+                    <h2>Любимые места</h2>
+                    <div class="places-grid">
+                        <figure class="place">
+                            <img src="https://i.pinimg.com/736x/5b/79/95/5b79956bf726838311deb287f2f737ea.jpg" alt="Мастерская">
+                            <figcaption>
+                                <h3>Мастерская</h3>
+                                <p lang="ru">Место, где воплощаются идеи</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="place">
+                            <img src="https://i.pinimg.com/1200x/08/cb/0e/08cb0e8eff60486eb8679490c4a1f372.jpg" alt="Горы">
+                            <figcaption>
+                                <h3>Горы</h3>
+                                <p lang="ru">Свобода и ветер</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="place">
+                            <img src="https://i.pinimg.com/736x/0f/a3/e9/0fa3e912e7df9c0cccd70061f874b350.jpg" alt="Побережье">
+                            <figcaption>
+                                <h3>Побережье</h3>
+                                <p lang="ru">Море, солнце, песок</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="place">
+                            <img src="https://i.pinimg.com/1200x/3d/08/a4/3d08a4dc63591fa9ce91603b5f25be82.jpg" alt="Дорога">
+                            <figcaption>
+                                <h3>Дорога</h3>
+                                <p lang="ru">Свобода и жажда скорости</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="place">
+                            <img src="https://i.pinimg.com/736x/bf/45/66/bf45669b683b2fbe6ecd945d7d0db31f.jpg" alt="Лес">
+                            <figcaption>
+                                <h3>Лес</h3>
+                                <p lang="ru">Тишина и свежий воздух</p>
+                            </figcaption>
+                        </figure>
+                        <figure class="place">
+                            <img src="https://i.pinimg.com/736x/a6/d5/73/a6d573db46f8b389f325c4287ae1d147.jpg" alt="Книжный магазин">
+                            <figcaption>
+                                <h3>Книжный магазин</h3>
+                                <p lang="ru">Множество миров</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section id="feedback" class="scroll-section feedback-form">
+                    <h2>Обратная связь</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" placeholder="Напишите о вашей идее или проекте..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Отправить</button>
+                    </form>
+                </section>
+
+            </main>
+
+            <aside style="background-color: rgba(255, 255, 255, 0.7);">
+                <h3>Любимое направление</h3>
+                <p lang="ru"><span class="highlight-word">Скетчинг</span> — техника быстрого рисования, когда делают наброски, чтобы зафиксировать идею, объект или сцену без детальной проработки.</p>
+            </aside>
+        </div>
+
+        <footer>
+            <span class="footer-copy">© Филимонова Ксения 2026</span>
+            <a href="#top" class="footer-link">Наверх</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        const sections = document.querySelectorAll('.scroll-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sections.forEach(s => s.classList.remove('active'));
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.5 });
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+</html>
